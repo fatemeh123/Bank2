@@ -13,6 +13,7 @@ public class Thermocouple  extends Objects{
 //****************************************************************************
 
     public ArrayList<Integer> tempreture(String mySeason){
+        int iii = 2;
         Array[] randomNumbersForTemp = new Array[9];
         ArrayList <Integer> outTempList=new ArrayList<Integer>(); //ye araye tarif kardim ke damaye biroono random berizim toosh bad sort kardim
         ArrayList <Integer> outTempList13To24=new ArrayList<Integer>();
