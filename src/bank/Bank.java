@@ -10,7 +10,7 @@ import java.util.Date;
 
 
 }
-public class Bank extends World {
+public class Bank extends World {    //eshtbahe
 
     String owner;
     int ID;
@@ -20,7 +20,7 @@ public class Bank extends World {
     int height=16;
     int length=25;
     int weidth=3;
-    final double volume=1200;
+    double volume=1200;
 
 //    public Bank(int ID,String owner,long balance){
 //        this.ID=ID;

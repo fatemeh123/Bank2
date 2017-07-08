@@ -31,9 +31,9 @@ public class Thermocouple  extends Objects{
 
             for (int i=13;i<=24;i++){
                 int randomNum = ThreadLocalRandom.current().nextInt(5, 25 + 1); // baraye peyda kardane adade random beyne min=5 o max=25
-                outTempList.add(randomNum);
+                outTempList13To24.add(randomNum);
             }
-            Collections.sort(outTempList13To24, Collections.reverseOrder());
+            Collections.sort(outTempList13To24, Collections.reverseOrder());    //dama besoorate nozooli sort mishe
 
 
         }
@@ -47,7 +47,7 @@ public class Thermocouple  extends Objects{
 
             for (int i=13;i<=24;i++){
                 int randomNum = ThreadLocalRandom.current().nextInt(20, 40 + 1); // baraye peyda kardane adade random beyne min=5 o max=25
-                outTempList.add(randomNum);
+                outTempList13To24.add(randomNum);
             }
             Collections.sort(outTempList13To24, Collections.reverseOrder());
 
@@ -62,7 +62,7 @@ public class Thermocouple  extends Objects{
 
             for (int i=13;i<=24;i++){
                 int randomNum = ThreadLocalRandom.current().nextInt(-5, 20 + 1); // baraye peyda kardane adade random beyne min=5 o max=25
-                outTempList.add(randomNum);
+                outTempList13To24.add(randomNum);
             }
             Collections.sort(outTempList13To24, Collections.reverseOrder());
         }
@@ -76,12 +76,13 @@ public class Thermocouple  extends Objects{
 
             for (int i=13;i<=24;i++){
                 int randomNum = ThreadLocalRandom.current().nextInt(-20, 15 + 1); // baraye peyda kardane adade random beyne min=5 o max=25
-                outTempList.add(randomNum);
+                outTempList13To24.add(randomNum);
             }
             Collections.sort(outTempList13To24, Collections.reverseOrder());
 
         }
-        return outTempList ;
+        outTempList.addAll(outTempList13To24);
+        return outTempList;
 
     }
 

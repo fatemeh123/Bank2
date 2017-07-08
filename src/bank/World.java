@@ -1,9 +1,12 @@
 package bank; /**
  * Created by fatemehabdi on 7/4/17.
  */
+import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion;
+
 import java.util.ArrayList;
 import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
+import java.lang.String;
+import static java.lang.System.*;
 
 import java.util.HashMap;
 //package packageForBank ;
@@ -13,12 +16,13 @@ import java.util.HashMap;
 //}
 
 public class World {
+     static float inDoorTemp;      //havaye dakhelo static tarif mikonim ke har bar tahghir kard meghdaresh dakhelesh bemoone
 
     public static void main(String[] args){
 
-        HashMap MyPerson= new HashMap();
+        //HashMap MyPerson= new HashMap();
         Random rand = new Random();
-
+        int day[]={1,2,3};
 
 //        double time[]=new double[23];
 //
@@ -35,16 +39,35 @@ public class World {
 //            listOfCustomar.add(new bank.Customar(200+i,"fatemeh",2500+(100*i)));
 //
 //        }
-        UserInterface uI =new UserInterface();
-        uI.ShowTime();
-        //moshtari besazim
-        ArrayList<Customar> customarArrayList=new ArrayList<Customar>();
-        int randomNum = ThreadLocalRandom.current().nextInt(0, 30 + 1);
-        for (int i=0;i<= randomNum;i++){
-            Customar.AccountType newCustomar= Customar.AccountType.getRandom();    //esm va noe hesab be soorate random
-            Customar.NameType newName= Customar.NameType.getRandom();
-            customarArrayList.add(new Customar(123+i,"fatemeh",1200+(i*100),newCustomar));
-        }
+        UserInterface ui =new UserInterface();
+        ui.ShowTime();
+
+//        //moshtari besazim
+//
+//
+//        Customar myCustomar=new Customar();
+//        Customar myCustomar1=new Customar();
+//        UserInterface showCustomars=new UserInterface();
+//        ArrayList<Customar> myCustomarArrayList=new ArrayList<Customar>();
+//        ArrayList<Customar> myCustomarArrayList1=new ArrayList<Customar>();     //define static collection
+//
+//        for(int p=0;p<4;p++) {
+//
+//            for (int j = 0; j < day.length; j++) {
+//
+//                myCustomarArrayList=myCustomar.MakeCustomar();
+//                showCustomars.ShowCustomars(myCustomarArrayList);
+//
+//
+//            }
+//
+//        }
+//
+//
+//        System.out.println("the number of customars is"+myCustomarArrayList.size());
+
+
+
 
 
 

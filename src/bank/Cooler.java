@@ -18,13 +18,15 @@ public class Cooler extends Objects implements MyObject {
 
 
         }
-    public double Makecolder(double powerTime){     // harbar 500 j energy migire
-
-        return powerTime-=power;
+    public int Makecolder(double powerTime,double indoorTemp){     // harbar 500 j energy migire
+        double bankVolume=1200;
+        double bankEnergy=bankVolume*indoorTemp;
+        indoorTemp=((bankEnergy+=power)/1200);
+        return ((int) indoorTemp);
 
     }
 
-    public double OutDoorEffect(int outDoorTemp,float inDoorTemp){   //tasire havaye biroon too dakhel
+    public double OutDoorEffect(int outDoorTemp,double inDoorTemp){   //tasire havaye biroon too dakhel
 
         inDoorTemp=(float)((outDoorTemp*0.07) +inDoorTemp);
         return inDoorTemp;

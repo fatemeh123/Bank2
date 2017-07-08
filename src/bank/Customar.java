@@ -11,7 +11,7 @@ public class Customar {
     private String name;
     private long balance;
     public enum AccountType{
-        Gharzolhasane,CurrentAccout,ShortTimeAccount,LongTimeAccount;  //besorate random entekhab mikonam
+        Gharzolhasane,CurrentAccout,ShortTimeAccount;  //besorate random entekhab mikonam
         public static AccountType getRandom() {
             return values()[(int) (Math.random() * values().length)];
         }
@@ -31,16 +31,41 @@ public class Customar {
         this.id=id;
         this.name=name;
 
-        //tarikhe eftetahe hesab
+                                                                                //tarikhe eftetahe hesab???????
     }
-    public ArrayList<Customar> MakeCustoamr(){
+    public Customar(int id,String name,long balance,String accType){
+        this.balance=balance;
+        this.id=id;
+        this.name=name;
+
+        //tarikhe eftetahe hesab???????
+    }
+    public Customar(){
+
+    }
+
+    /*sakhtane moshtari dar har rooz beyne 0 ta 100 ta moshtari
+    vasamoon misaze ke tedade moshtaria akhare har rooz moshakhas mishe
+     */
+
+
+    public ArrayList<Customar> MakeCustomar(){
         ArrayList<Customar> customarArrayList=new ArrayList<Customar>();
         int randomNum = ThreadLocalRandom.current().nextInt(0, 100 + 1);
-        for (int i=0;i<= randomNum;i++){
+        int a=(int)randomNum/5;                                                    //az har 5 nafar 1 nafar hesabe boland modat mikhad
+        int b=(int)randomNum%5;
+
+        for (int i=0;i<a;i++){
             Customar.AccountType newCustomar= Customar.AccountType.getRandom();    //esm va noe hesab be soorate random
             Customar.NameType newName= Customar.NameType.getRandom();
-            Customar myCustomar=new Customar(123+i,"fatemeh",1200+(i*100),newCustomar);
+            for (int j=0;j<2;j++){                                                 //1 nafar az 5nafar hesabe boland modat dare
+                customarArrayList.add(new Customar(123+i,newName.toString(),1200+(i*100),"LongTimeAccount"));
+            }
+            for (int k=0;k<4+b;k++){                                               //hade aghal 4 nafar hesabaye dg daran
+                customarArrayList.add(new Customar(123+i,newName.toString(),1200+(i*100),newCustomar));
+            }
         }
+        System.out.println(customarArrayList+"  "+"The number of all day customar is:    "+randomNum);
         return customarArrayList;
 
     }
